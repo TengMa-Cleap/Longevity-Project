@@ -43,6 +43,6 @@ adonis(distance ~ time, data= group,permutations = 999)
 library(UpSetR)
 library(RColorBrewer)
 all <- read.table("clipboard", header =T, sep="\t",row.names=1)
-mc <- brewer.pal(12, "Set3") #display.brewer.all(type="all")这是查看所有颜色的类型，可根据情况自行修改，其中n代表的12。通过brewer.pal(n,"name")函数，可以很轻松的提取出你想要的配色主题。
+mc <- brewer.pal(12, "Set3") #display.brewer.all(type="all") 
 upset(all, nsets = 8, order.by = "freq", number.angles = 0,  sets.bar.color = mc, mainbar.y.label = "Intersection size", sets.x.label = "Set size", text.scale = c(1.3, 1.3, 1.3, 1, 1.5, 1))
-# upset(all, nsets = 11, number.angles = 0, point.size = 2, line.size = 1, mainbar.y.label = "Gene Intersections", sets.x.label = "Per Genre", text.scale = c(1.3, 1.3, 1, 1, 1.5, 1))#nsets 表示展示几个集合； numble.angle 用于调整柱子上数字的角度；mainbar.y.label/sets.x.label 坐标轴名称；text.scale() 有六个数字，分别控制c(intersection size title, intersection size tick labels, set size title, set size tick labels, set names, numbers above bars)
+# upset(all, nsets = 11, number.angles = 0, point.size = 2, line.size = 1, mainbar.y.label = "Gene Intersections", sets.x.label = "Per Genre", text.scale = c(1.3, 1.3, 1, 1, 1.5, 1))
